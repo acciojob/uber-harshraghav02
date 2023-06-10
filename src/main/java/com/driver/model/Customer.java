@@ -6,6 +6,9 @@ import java.util.List;
 
 @Entity
 public class Customer {
+    public Customer() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int customerId;

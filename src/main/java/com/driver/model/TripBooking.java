@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 public class TripBooking {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int tripBookingId;
@@ -17,6 +18,7 @@ public class TripBooking {
     TripStatus status;
 
     int bill;
+
 
     public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm, TripStatus status, int bill, Driver driver, Customer customer) {
         this.tripBookingId = tripBookingId;

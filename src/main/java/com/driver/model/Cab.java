@@ -4,6 +4,9 @@ import javax.persistence.*;
 
 @Entity
 public class Cab {
+    public Cab() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
@@ -32,7 +35,7 @@ public class Cab {
         this.perKmRate = perKmRate;
     }
 
-    public boolean isAvailable() {
+    public boolean getAvailable() {
         return available;
     }
 
@@ -40,9 +43,20 @@ public class Cab {
         this.available = available;
     }
 
+
+
     public Cab(int perKmRate, boolean available) {
 
         this.perKmRate = perKmRate;
         this.available = available;
     }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
 }

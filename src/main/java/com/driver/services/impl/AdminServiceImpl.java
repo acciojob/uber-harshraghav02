@@ -33,13 +33,11 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public Admin updatePassword(Integer adminId, String password) throws Exception {
+	public Admin updatePassword(Integer adminId, String password) {
 		//Update the password of admin with given id
 		Optional<Admin> optionalAdmin = adminRepository1.findById(adminId);
 
-		if(!optionalAdmin.isPresent()){
-			throw new Exception("Admin not registered");
-		}
+
 
 		Admin admin = optionalAdmin.get();
 
@@ -49,12 +47,10 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public void deleteAdmin(int adminId) throws Exception {
+	public void deleteAdmin(int adminId)  {
 		// Delete admin without using deleteById function
 		Optional<Admin> optionalAdmin = adminRepository1.findById(adminId);
-		if(!optionalAdmin.isPresent()){
-			throw new Exception("Admin not registered");
-		}
+
 
 		adminRepository1.delete(optionalAdmin.get());
 	}

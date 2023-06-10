@@ -35,13 +35,11 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void deleteCustomer(Integer customerId) throws Exception {
+	public void deleteCustomer(Integer customerId)  {
 		// Delete customer without using deleteById function
 		Optional<Customer> optionalCustomer = customerRepository2.findById(customerId);
 
-		if(!optionalCustomer.isPresent()){
-			throw new Exception("Customer Not Preset");
-		}
+
 
 		customerRepository2.delete(optionalCustomer.get());
 	}
